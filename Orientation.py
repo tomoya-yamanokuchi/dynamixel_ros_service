@@ -6,7 +6,7 @@ from angle_interface import angle_interface as ai
 ・生のnumpy配列を引数でやり取りしてどの角度形式が用いられているかわからず混乱することを避けるのが目的
 '''
 
-class Control:
+class Orientation:
     def __init__(self, radvec: np.ndarray) -> None:
         self.radvec = radvec
 
@@ -44,15 +44,15 @@ if __name__ == '__main__':
     # ------------ Example usage (input) ------------
     print("--------------------------------------")
     radvec = np.array([0, 3.1415, 6.28319], dtype=float)
-    ctrl1 = Control.from_radvec(radvec)
+    ctrl1 = Orientation.from_radvec(radvec)
     print(f"ctrl1.radvec = {ctrl1.radvec}")
 
     degvec = np.array([0, 180, 360], dtype=float)
-    ctrl2 = Control.from_degvec(degvec)
+    ctrl2 = Orientation.from_degvec(degvec)
     print(f"ctrl2.radvec = {ctrl2.radvec}")
 
     resvec = np.array([0, 2000, 4440], dtype=float)
-    ctrl3 = Control.from_resvec(resvec)
+    ctrl3 = Orientation.from_resvec(resvec)
     print(f"ctrl3.radvec = {ctrl3.radvec}")
 
     # ------------ Example usage (output) ------------
